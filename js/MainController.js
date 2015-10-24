@@ -1,7 +1,7 @@
-(function(){
-    var killzoneApp = angular.module("killzoneApp");
+(function(module){
 
-    killzoneApp.controller("MainController", function($scope, $http, killzone){
+
+    module.controller("MainController", function($scope, $http, killzone){
         var main = this;
 
         var onSearch = function(data){
@@ -10,17 +10,18 @@
 
         };
 
-        $scope.getdisplayName = function(name){
+        var onClan = function(data){
 
-            $scope.displayName = name;
-
-
-            killzone.getPlayer($scope.displayName).then(onSearch);
+            $scope.player.clan = data;
 
         };
 
+        $scope.getdisplayName = function(name){
 
+            killzone.getPlayer(name).then(onSearch);
+            killzone.getClan(name).then(onClan);
+        };
 
 
     });
-}());
+}(angular.module("killzoneApp")));

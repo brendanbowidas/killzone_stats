@@ -10,8 +10,17 @@
                 });
         };
 
+        var getClan = function(name) {
+            return $http.get("http://killzone4.online.scee.com/api/clan/get-clan-for-user/" + name)
+            .then(function(response){
+                return response.data;
+            });
+
+        };
+
         return {
-            getPlayer: getPlayer
+            getPlayer: getPlayer,
+            getClan: getClan
         }
     };
 

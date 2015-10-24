@@ -5,6 +5,7 @@
                 <img class="img-responsive pull-left" ng-src="{{player.PlayerCardIcon}}">
             </div>
             <ul class="list-unstyled">
+               <li ng-show="player">Clan: {{player.clan.tag}}</li>
                 <li ng-show="player">Games Played: {{player.GamesPlayed}}</li>
                 <li ng-show="player">K/D: {{player.Kills / player.Deaths | number: 2}}</li>
 
