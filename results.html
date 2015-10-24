@@ -10,7 +10,7 @@
 
                 <li ng-show="player">W/L: {{player.GameWins / player.GameLosses | number: 2}}</li>
                 <li ng-show="player">Headshot %: {{(100 * player.HeadShots / player.Kills) | number: 2}}</li>
-                <li ng-show="player">Kills per minute: {{player.TimePlayed / player.Kills | number: 2}}</li>
+                <li ng-show="player">Kills per minute: {{ player.Kills  / (player.TimePlayed / 60) | number: 2 }}</li>
                 <li ng-show="player">Mission W/L ratio: {{player.MissionWins / player.MissionLosses | number: 2}}</li><br/>
                 <li ng-show="player">Total mission points: {{player.MissionPoints | number}}</li>
 
