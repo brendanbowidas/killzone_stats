@@ -1,7 +1,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 2em;
     font-weight: 300;
     letter-spacing: 0.02em;
