@@ -12,7 +12,7 @@
                 <li ng-show="player">Headshot %: {{(100 * player.HeadShots / player.Kills) | number: 2}}</li>
 
                 <li ng-show="player">Mission W/L ratio: {{player.MissionWins / player.MissionLosses | number: 2}}</li>
-                <li ng-show="player">Total mission points: {{player.MissionPoints}}</li>
+                <li ng-show="player">Total mission points: {{player.MissionPoints | number}}</li>
                  <li ng-show="player">BEAST RATING: {{(player.MissionPoints / player.GamesPlayed) * (player.Kills / player.Deaths) | number: 2}}</li>
             </ul>
         </div>
