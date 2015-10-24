@@ -1,0 +1,20 @@
+<div class="container results-container">
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <div class="col-xs-6 img-container">
+                <img class="img-responsive pull-left" ng-src="{{player.PlayerCardIcon}}">
+            </div>
+            <ul class="list-unstyled">
+                <li ng-show="player">Games Played: {{player.GamesPlayed}}</li>
+                <li ng-show="player">K/D: {{player.Kills / player.Deaths | number: 2}}</li>
+
+                <li ng-show="player">W/L: {{player.GameWins / player.GameLosses | number: 2}}</li>
+                <li ng-show="player">Headshot %: {{(100 * player.HeadShots / player.Kills) | number: 2}}</li>
+
+                <li ng-show="player">Mission W/L ratio: {{player.MissionWins / player.MissionLosses | number: 2}}</li>
+                <li ng-show="player">Total mission points: {{player.MissionPoints}}</li>
+                 <li ng-show="player">BEAST RATING: {{(player.MissionPoints / player.GamesPlayed) * (player.Kills / player.Deaths) | number: 2}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

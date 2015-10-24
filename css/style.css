@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: 2em;
+    font-weight: 200;
+    letter-spacing: 0.02em;
+}
+
+input {
+    font-weight: 500;
+}
+
+.search-container {
+    margin-top: 70px;
+}
+
+.search-group {
+    margin-top: 30px;
+}
