@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PlayerCard from '../components/PlayerCard';
 
  class PlayerList extends Component {
   constructor(props) {
     super(props);
   }
    componentDidUpdate() {
-     console.log(this.props.players);
+
    }
   _renderPlayer(playerData) {
-
+    console.log(playerData);
+    return (
+      <PlayerCard key={playerData.name} name={playerData.name} stats={playerData.stats} />
+    )
   }
 
   render() {
 
     return(
       <div>
-
+        <ul>
+          {this.props.players.map(this._renderPlayer)}
+        </ul>
       </div>
     );
   }
@@ -25,7 +31,7 @@ import { connect } from 'react-redux';
 function mapStateToProps(state){
   return {
     players: state.players,
-    player: state.player,
+
   }
 }
 

@@ -19,14 +19,15 @@ import { fetchData, setName } from '../actions/index';
   };
 
   _onFormSubmit(e){
-    e.preventDefault();
+    e.preventDefault();    
     this.props.fetchData(this.state.term)
     .then((response) => {
       this.props.setName(this.state.term);
+      this.setState({term: ''});
 
     });
 
-    //this.setState({term: ''});
+
 
 
   }

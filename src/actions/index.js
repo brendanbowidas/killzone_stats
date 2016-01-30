@@ -5,6 +5,8 @@ import axios from 'axios';
  export const FETCH_DATA = 'FETCH_DATA';
  export const SET_NAME = 'SET_NAME';
 
+ var initialID = 0;
+
 export function fetchData(player) {
   const url = ROOT_URL + player;
   const request = axios.get(url);
@@ -21,5 +23,6 @@ export function setName(name) {
   return {
     type: SET_NAME,
     name: name
+
   }
 }
