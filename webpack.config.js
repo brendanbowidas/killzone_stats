@@ -15,6 +15,12 @@ module.exports = {
       loaders: ['react-hot', 'babel']
     }]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+    'process.env.NODE_ENV': '"development"'
+}),
+
+  ],
 
   resolve: {
     extensions: ['', '.js', '.jsx']

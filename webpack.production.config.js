@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 var config = {
@@ -7,6 +8,13 @@ var config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+
+  plugins: [
+    new webpack.DefinePlugin({
+    'process.env.NODE_ENV': '"production"'
+}),
+
+  ],
   module: {
     loaders: [{
       test: /\.js$/,
