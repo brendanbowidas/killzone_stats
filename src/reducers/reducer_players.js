@@ -1,14 +1,15 @@
-import { FETCH_DATA, SET_NAME } from '../actions/index';
+import { FETCH_DATA, SET_NAME, REMOVE_PLAYER, FETCH_CLAN } from '../actions/index';
 
 
  function player(state, action) {
   switch(action.type) {
     case SET_NAME:
       return Object.assign({}, state, {
-
+        id: action.id,
         name: action.name
 
       });
+
 
 
     default:
@@ -29,13 +30,21 @@ export default function(state = [], action) {
 
         ];
 
+        case FETCH_CLAN:
+          return []
+
       case SET_NAME:
         return state.map(n => {
-          console.log( 'n name: ' + n.name + "  " + "action name:" + action.name)
           if(n.name === ''){
         return player(n, action);
       } else return n
         });
+
+        case REMOVE_PLAYER:
+          return [
+            ...state.slice(0, action.index),
+            ...state.slice(action.index + 1)
+          ];
 
   }
   return state;

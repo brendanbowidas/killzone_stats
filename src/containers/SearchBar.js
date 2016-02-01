@@ -19,26 +19,30 @@ import { fetchData, setName } from '../actions/index';
   };
 
   _onFormSubmit(e){
-    e.preventDefault();    
+    e.preventDefault();
     this.props.fetchData(this.state.term)
     .then((response) => {
       this.props.setName(this.state.term);
       this.setState({term: ''});
 
-    });
-
-
-
-
+    })
   }
   render() {
     return(
-      <div>
-        <form onSubmit={(e) => this._onFormSubmit(e)} className="input-group">
+      <div className="playerList container">
+        <div className="row">
+              <div className="col-xs-12 col-md-8 col-md-offset-2">
+                  <img className="img-responsive" src="img/killzone.png"/>
+              </div>
+          </div><br/>
+        <div className="row">
+        <form onSubmit={(e) => this._onFormSubmit(e)}
+          className="input-group col-xs-12 col-md-8 col-md-offset-2" >
           <input type="text"
             className="form-control"
             value={this.state.term}
-          onChange={(e) => this._onInputChange(e)}
+            autofocus
+            onChange={(e) => this._onInputChange(e)}
           />
 
           <span className="input-group-btn">
@@ -48,6 +52,7 @@ import { fetchData, setName } from '../actions/index';
           </span>
 
         </form>
+        </div>
 
       </div>
     );

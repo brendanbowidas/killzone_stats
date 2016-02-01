@@ -1,6 +1,8 @@
 module.exports = {
   entry: [
-    './src/index.js'
+  'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+  'webpack/hot/only-dev-server',
+  './src/index.js'
   ],
   output: {
     path: __dirname,
@@ -10,9 +12,10 @@ module.exports = {
   module: {
     loaders: [{
       exclude: /node_modules/,
-      loader: 'babel'
+      loaders: ['react-hot', 'babel']
     }]
   },
+
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
