@@ -39,6 +39,7 @@ import { fetchData, setName } from '../actions/index';
         <form onSubmit={(e) => this._onFormSubmit(e)}
           className="input-group col-xs-12 col-md-8 col-md-offset-2" >
           <input type="text"
+            placeholder="Enter a PSN ID (case sensitive)"
             className="form-control"
             value={this.state.term}
             autofocus="true"
