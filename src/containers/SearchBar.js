@@ -41,7 +41,7 @@ import { fetchData, setName } from '../actions/index';
           <input type="text"
             className="form-control"
             value={this.state.term}
-            autofocus
+            autofocus="true"
             onChange={(e) => this._onInputChange(e)}
           />
 

@@ -6,8 +6,8 @@
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
-
+    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "develop": "NODE_ENV=development webpack  --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "axios": "^0.9.1",
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
+    "numeral": "^1.5.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
