@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
-    "develop": "NODE_ENV=development webpack  --config webpack.production.config.js"
+    "develop": "NODE_ENV=development webpack  --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "babel-preset-react": "^6.1.18",
     "react-hot-loader": "^1.3.0",
     "react-transform-hmr": "^1.0.1",
+    "redux-logger": "^2.6.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },

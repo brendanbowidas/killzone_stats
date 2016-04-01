@@ -1,4 +1,6 @@
-import { FETCH_DATA, SET_NAME, REMOVE_PLAYER, FETCH_CLAN } from '../actions/index';
+import { FETCH_DATA, SET_NAME, REMOVE_PLAYER, FETCH_CLAN, ADD_FAVORITE } from '../actions/index';
+
+
 
 
  function player(state, action) {
@@ -10,41 +12,54 @@ import { FETCH_DATA, SET_NAME, REMOVE_PLAYER, FETCH_CLAN } from '../actions/inde
 
       });
 
-
-
     default:
       return state;
   }
 }
 
 
-export default function(state = [], action) {
+
+export default function(state = { players: [], favorites: [] }, action) {
   switch(action.type) {
     case FETCH_DATA:
-      return [
-        {
-          name: '',
-          stats: action.payload.data
-        },
-        ...state
-
-        ];
+      console.log(action.meta.name)
+      return Object.assign({}, state, {
+        players: [
+          {
+            id: action.meta.id,
+            name: action.meta.name,
+            stats: action.payload.data
+          },
+          ...state.players
+        ]
+      })
 
         case FETCH_CLAN:
           return []
 
       case SET_NAME:
-        return state.map(n => {
-          if(n.name === ''){
-        return player(n, action);
-      } else return n
-        });
+
+         state.players.map(n => {
+          if(n.name === '') {
+            return players(n, action);
+          } else return n;
+        })
 
         case REMOVE_PLAYER:
-          return [
-            ...state.slice(0, action.index),
-            ...state.slice(action.index + 1)
-          ];
+          return Object.assign({}, state, {
+            players: [
+              ...state.players.slice(0, action.index),
+              ...state.players.slice(action.index + 1)
+            ]
+          })
+
+        case ADD_FAVORITE:
+          return Object.assign({}, state, {
+            favorites: [
+              action.player,
+              ...state.favorites
+            ]
+          })
 
   }
   return state;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchData, setName } from '../actions/index';
+import { fetchData } from '../actions/index';
 
  class SearchBar extends Component {
 
@@ -22,9 +22,7 @@ import { fetchData, setName } from '../actions/index';
     e.preventDefault();
     this.props.fetchData(this.state.term)
     .then((response) => {
-      this.props.setName(this.state.term);
       this.setState({term: ''});
-
     })
   }
   render() {
@@ -32,7 +30,9 @@ import { fetchData, setName } from '../actions/index';
       <div className="playerList container">
         <div className="row">
               <div className="col-xs-12 col-md-8 col-md-offset-2">
-                  <img className="img-responsive" src="img/killzone.png"/>
+
+            <img className="img-responsive" src="img/killzone.png"/>
+            
               </div>
           </div><br/>
         <div className="row">
@@ -61,7 +61,7 @@ import { fetchData, setName } from '../actions/index';
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchData, setName }, dispatch);
+  return bindActionCreators({ fetchData }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar);

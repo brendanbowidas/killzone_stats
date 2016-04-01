@@ -7,6 +7,7 @@ export default (props) => {
     <div className="row playerList">
         <div className="card player-card col-xs-12 col-md-8 col-md-offset-2">
           <i className="close" onClick={(e) => props.remove(props.index)}>X</i>
+          <i className="favorite" onClick={(e) => props.favorite(props.index)}>Favorite</i>
 
             <h4>{props.name}</h4>
             <div className="col-xs-12 col-sm-4 img-container">
